@@ -21,7 +21,6 @@ class PortfoliosController < ApplicationController
 
   def edit
     @portfolio_item = Portfolio.find(params[:id])
-
   end
 
   def update
@@ -34,6 +33,10 @@ class PortfoliosController < ApplicationController
         format.html { render :edit, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
   end
 end
 
